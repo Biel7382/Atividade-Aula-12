@@ -58,7 +58,7 @@ namespace Projeto_Gabriel
 
             cmd.ExecuteNonQuery();
             db.CloseConnection();
-            DialogResult = DialogResult.OK; // Fecha o formulário
+            DialogResult = DialogResult.OK;
         }
     }
 }

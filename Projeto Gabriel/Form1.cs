@@ -12,8 +12,6 @@ namespace Projeto_Gabriel
             InitializeComponent();
             LoadData();
         }
-
-        // Carregar produtos no DataGridView
         private void LoadData()
         {
             db.OpenConnection();
@@ -31,7 +29,7 @@ namespace Projeto_Gabriel
             FormCadastro formCadastro = new FormCadastro();
             if (formCadastro.ShowDialog() == DialogResult.OK)
             {
-                LoadData(); // Recarrega os dados após adicionar
+                LoadData();
             }
         }
 
@@ -46,7 +44,7 @@ namespace Projeto_Gabriel
                 FormCadastro formCadastro = new FormCadastro(id, nome, preco);
                 if (formCadastro.ShowDialog() == DialogResult.OK)
                 {
-                    LoadData(); // Recarrega os dados após atualizar
+                    LoadData();
                 }
             }
             else
@@ -66,7 +64,7 @@ namespace Projeto_Gabriel
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
                 db.CloseConnection();
-                LoadData(); // Recarrega os dados após excluir
+                LoadData();
             }
             else
             {
